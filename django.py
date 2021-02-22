@@ -26,10 +26,9 @@ class Create(LoginRequiredMixin,CreateMixin,View):
 
 #Миксин класса Create
 
-
 class CreateMixin(View):
     model = None #модель 
-    form = None #форма для создания(я использовал этот миксни для 2 классов во views.py)
+    form = None #форма
     redirect_page = None #перенаправление пользователся после создание поста
     template_name = None #шаблон
     
