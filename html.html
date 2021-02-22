@@ -1,0 +1,32 @@
+<!--шаблон связаный с проблемой-->
+<!--шаблон для создания постов-->
+
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h3 style="text-align: center;font-family: Georgia, 'Times New Roman', Times, serif;">Создать пост:</h3>
+
+<title>Создать пост</title>
+
+<form action="{% url 'create' %}" method="post">
+{% csrf_token %}
+{% for field in forms %}
+<br>
+<div style="width: 600px;margin: auto;" class='from-group'>
+    {% if field.errors %}
+        <div class='danger danger-alert'>
+            {{field.errors}}
+        </div>
+    {% else %}
+        {{field}}
+    {% endif %}
+</div>
+
+{% endfor %}
+<br>
+<button style="margin-left: 858px;width: 200px;" type="submit" class="btn btn-success">Создать пост</button>
+
+
+</form>
+
+{% endblock %}
