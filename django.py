@@ -24,7 +24,8 @@ class Create(LoginRequiredMixin,CreateMixin,View):
     redirect_page = 'list'
     form = PostForm
 
-#Миксин класса CreateCategory   
+#Миксин класса Create
+
 
 class CreateMixin(View):
     model = None #модель 
